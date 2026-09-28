@@ -6,7 +6,9 @@ local S = core.get_translator(core.get_current_modname())
 -- always plus a second one 40% of the time.
 
 local function on_bone_meal(itemstack, placer, pointed_thing, pos, node)
-	return mcl_farming.on_bone_meal(itemstack, placer, pointed_thing, pos, node, "plant_leo_strawberry")
+	-- Pass stages = 1 like the other few-stage crops (beetroot, sweet_berry)
+	-- so bone meal advances gradually instead of overshooting to maturity.
+	return mcl_farming.on_bone_meal(itemstack, placer, pointed_thing, pos, node, "plant_leo_strawberry", 1)
 end
 
 local sel_heights = {
