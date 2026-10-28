@@ -44,7 +44,7 @@ for i = 1, 5 do
 		sounds = mcl_sounds.node_sound_leaves_defaults(),
 		_mcl_hardness = 0,
 		_on_bone_meal = on_bone_meal,
-		_mcl_baseitem = "leo_strawberry:strawberry",
+		_mcl_baseitem = "leo_strawberry:strawberry_seeds",
 	}
 
 	if i < 5 then
@@ -102,7 +102,7 @@ core.register_node("leo_strawberry:plant_5", {
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	_mcl_hardness = 0,
 	_on_bone_meal = on_bone_meal,
-	_mcl_baseitem = "leo_strawberry:strawberry",
+	_mcl_baseitem = "leo_strawberry:strawberry_seeds",
 })
 
 mcl_farming:add_plant("plant_leo_strawberry", "leo_strawberry:plant_5", {
