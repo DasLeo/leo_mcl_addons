@@ -107,3 +107,34 @@ core.override_item("mcl_flowers:tulip_red", {
 		},
 	},
 })
+
+-- leo_mcl_addons_test: a dev/test chat command that grants the executing player
+-- a full set of items for exercising this addon (jar brewing, farming, etc.).
+-- Everything comes in stacks of 64 except a single crafting table. add_item puts
+-- each stack into the player's main inventory and drops any overflow at their
+-- feet if it is full.
+core.register_chatcommand("leo_mcl_addons_test", {
+	description = S("Give yourself a set of leo_mcl_addons test items"),
+	func = function(name)
+		local player = core.get_player_by_name(name)
+		if not player then
+			return false, "Player not found."
+		end
+		local inv = player:get_inventory()
+		local grant = {
+			"mcl_core:glass 64",
+			"leo_strawberry:jar 64",
+			"leo_strawberry:strawberry 64",
+			"leo_strawberry:strawberry_seeds 64",
+			"mcl_brewing:stand_000 64",
+			"mcl_mobitems:blaze_powder 64",
+			"mcl_bone_meal:bone_meal 64",
+			"mcl_crafting_table:crafting_table 1",
+			"mcl_flowers:tulip_red 64",
+		}
+		for _, itemstring in ipairs(grant) do
+			inv:add_item("main", itemstring)
+		end
+		return true, "Granted the leo_mcl_addons test items to your inventory."
+	end,
+})
