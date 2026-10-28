@@ -17,7 +17,7 @@ a Minecraft-clone **game** built as a large collection of [Luanti](https://luant
   registration, groups, callbacks and item IDs are engine concepts; Mineclonia
   layers its `_mcl_*` conventions and helper mods on top.
 
-Third-party addons (like this `leo_strawberry` mod) are just more Luanti mods
+Third-party addons (like this `leo_mcl_addons` mod) are just more Luanti mods
 that depend on the relevant Mineclonia mods.
 
 ## Researching the Luanti engine source
@@ -60,8 +60,8 @@ git checkout "$(git for-each-ref --sort=-creatordate --format='%(refname:short)'
 Every item/node is registered with a **namespaced itemstring** `modname:itemname`:
 
 ```lua
-core.register_craftitem("leo_strawberry:strawberry", { ... })
-core.register_node("leo_strawberry:plant_5", { ... })
+core.register_craftitem("leo_mcl_addons:strawberry", { ... })
+core.register_node("leo_mcl_addons:plant_5", { ... })
 ```
 
 - `modname` is the `name =` value in the mod's `mod.conf`. In code you can read
@@ -69,7 +69,7 @@ core.register_node("leo_strawberry:plant_5", { ... })
   `core.get_modpath(core.get_current_modname())`.
 - `itemname` is any lowercase identifier you choose (`_` is conventional).
 - The same `modname` prefixes craftitem, node, and entity IDs from that mod.
-- This repo (`leo_mcl_addons`) IS the `leo_strawberry` mod: `init.lua` is the
+- This repo (`leo_mcl_addons`) IS the `leo_mcl_addons` mod: `init.lua` is the
   entry point, `farming.lua` is pulled in with `dofile(...)`, and `textures/`
   holds the PNGs referenced by `inventory_image`.
 
@@ -96,9 +96,9 @@ tools you hold but don't place).
 ```lua
 local S = core.get_translator(core.get_current_modname())
 
-core.register_craftitem("leo_strawberry:strawberry", {
+core.register_craftitem("leo_mcl_addons:strawberry", {
 	description = S("Strawberry"),
-	inventory_image = "leo_strawberry_strawberry.png",
+	inventory_image = "leo_mcl_addons_strawberry.png",
 	groups = { food = 2, eatable = 2, compostability = 30 },
 	_mcl_saturation = 1.2,
 })
@@ -133,9 +133,9 @@ Key fields:
 Use `core.register_node`. Nodes need digging groups and usually `_mcl_hardness`.
 
 ```lua
-core.register_node("leo_strawberry:berry_block", {
+core.register_node("leo_mcl_addons:berry_block", {
 	description = S("Block of Strawberries"),
-	tiles = { "leo_strawberry_berry_block.png" },
+	tiles = { "leo_mcl_addons_berry_block.png" },
 	groups = { building_block = 1, dig_by_piston = 1, compostability = 65 },
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	_mcl_hardness = 0,
@@ -158,7 +158,7 @@ Two mechanisms. Prefer the one that matches the item you're mirroring.
 
 ```lua
 core.register_craft({
-	output = "leo_strawberry:jar",
+	output = "leo_mcl_addons:jar",
 	recipe = {
 		{ "mcl_core:glass", "", "mcl_core:glass" },
 		{ "mcl_core:glass", "", "mcl_core:glass" },
@@ -177,10 +177,10 @@ shapes (handled by `_mcl_autogroup`). Mirrors how `mcl_farming:melon_item` turns
 into `mcl_farming:melon_seeds`:
 
 ```lua
-core.register_craftitem("leo_strawberry:strawberry", {
+core.register_craftitem("leo_mcl_addons:strawberry", {
 	-- ...
 	_mcl_crafting_output = {
-		single = { output = "leo_strawberry:strawberry_seeds" }, -- 1x1 shapeless
+		single = { output = "leo_mcl_addons:strawberry_seeds" }, -- 1x1 shapeless
 		square2 = { output = "..." },  -- 2x2 square
 		square3 = { output = "..." },  -- 3x3 square
 		-- also: line_wide2, line_wide3, line_tall2, line_tall3
@@ -208,13 +208,13 @@ The `mcl_farming` API (namespace `mcl_farming`, see
 A seed item typically looks like:
 
 ```lua
-core.register_craftitem("leo_strawberry:strawberry_seeds", {
+core.register_craftitem("leo_mcl_addons:strawberry_seeds", {
 	description = S("Strawberry Seeds"),
-	inventory_image = "farming_leo_strawberry_seeds.png",
+	inventory_image = "leo_mcl_addons_seeds.png",
 	groups = { craftitem = 1, compostability = 30 },
-	_mcl_places_plant = "leo_strawberry:plant_1",
+	_mcl_places_plant = "leo_mcl_addons:plant_1",
 	on_place = function(itemstack, placer, pointed_thing)
-		return mcl_farming:place_seed(itemstack, placer, pointed_thing, "leo_strawberry:plant_1")
+		return mcl_farming:place_seed(itemstack, placer, pointed_thing, "leo_mcl_addons:plant_1")
 	end,
 })
 ```
@@ -226,8 +226,8 @@ brewing stand, register the **base container** as an ingredient-potion and map
 ingredients to outputs. This is how a strawberry + 3 jars becomes marmalade:
 
 ```lua
-mcl_potions.register_ingredient_potion("leo_strawberry:jar", {
-	["leo_strawberry:strawberry"] = "leo_strawberry:marmelade",
+mcl_potions.register_ingredient_potion("leo_mcl_addons:jar", {
+	["leo_mcl_addons:strawberry"] = "leo_mcl_addons:marmelade",
 })
 ```
 

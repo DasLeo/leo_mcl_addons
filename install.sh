@@ -19,4 +19,4 @@ for entry in "$SRC_DIR"/*; do
 	cp -R "$entry" "$DEST_DIR/"
 done
 
-echo "Installed leo_strawberry into: $DEST_DIR"
+echo "Installed leo_mcl_addons into: $DEST_DIR"

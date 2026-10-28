@@ -24,4 +24,4 @@ def png_16x16_to_svg(input_path, output_path):
         f.write("\n".join(svg_parts))
 
 # Usage
-png_16x16_to_svg("leo_strawberry_strawberry.png", "output.svg")
+png_16x16_to_svg("leo_mcl_addons_strawberry.png", "output.svg")
