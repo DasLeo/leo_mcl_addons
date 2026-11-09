@@ -31,9 +31,11 @@ core.override_item("mcl_flowers:tulip_red", {
 -- a full set of items for exercising this addon (jar brewing, farming, etc.).
 -- Everything comes in stacks of 64 except a single crafting table. add_item puts
 -- each stack into the player's main inventory and drops any overflow at their
--- feet if it is full.
+-- feet if it is full. It requires the "leo_mcl_addons_test" privilege so it stays
+-- out of reach of ordinary players on a survival server.
 core.register_chatcommand("leo_mcl_addons_test", {
 	description = S("Give yourself a set of leo_mcl_addons test items"),
+	privs = { leo_mcl_addons_test = true },
 	func = function(name)
 		local player = core.get_player_by_name(name)
 		if not player then
