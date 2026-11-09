@@ -1,7 +1,7 @@
 # leo_mcl_addons
 
 A [Mineclonia](https://github.com/Sfiet_Ingvar/mineclonia) addon that adds
-strawberries and strawberry preserves.
+strawberries, strawberry preserves and bread-based foods.
 
 ## Content
 
@@ -15,15 +15,29 @@ strawberries and strawberry preserves.
   strawberry instead of the tulip.
 - **Glass Jar** — crafted from seven glass in a U/beaker shape. Doubles as a
   brewing container (it carries the `empty_bottle` group).
-- **Strawberry Marmalade** — brewed from a strawberry and empty jars in a brewing
-  stand. Twice as filling as a raw strawberry; eating it returns the empty jar.
+- **Sugar Syrup Jar / Honey Jar** — intermediate brews: a jar plus sugar (or a
+  honeycomb) in a brewing stand. Not food.
+- **Strawberry Marmalade** — brewed from a sugar syrup jar and a strawberry in
+  a brewing stand. Twice as filling as a raw strawberry; eating it returns the
+  empty jar.
+- **Bio Marmelade** — the gentler preserve, brewed from a honey jar and a
+  strawberry. Same values as the regular marmelade.
+- **Placed Bread** — rightclick a solid surface while holding bread to place a
+  loaf on it instead of eating the bread. Breaking the loaf with an axe of any
+  material drops three toast slices.
+- **Toast** — a slice of bread. Two hunger icons, generous saturation.
+- **Jam Toast** — crafted shapeless from one toast and one marmelade. The
+  strongest food in the addon: eight hunger points.
 
 ## Usage
 
 1. Craft or find a strawberry, then craft it into a seed.
 2. Hoe some dirt into farmland, water it, and plant the seeds.
 3. Harvest mature plants for strawberries.
-4. Brew strawberries with jars to make marmalade.
+4. Brew a jar with sugar (or a honeycomb) into a sugar syrup jar (or honey
+   jar), then brew that with a strawberry into marmelade (or bio marmelade).
+5. Place bread with a rightclick, chop the loaf with an axe for toast, and
+   spread marmelade on it in a crafting grid for jam toast.
 
 ## License
 

@@ -2,11 +2,16 @@ local S = core.get_translator(core.get_current_modname())
 local modpath = core.get_modpath(core.get_current_modname())
 
 -- Load each feature on its own, mirroring how Mineclonia splits a mod into
--- per-crop / per-system files. Order matters: jar.lua and marmelade.lua build on
--- the strawberry crop, so strawberry.lua loads first.
+-- per-crop / per-system files. Order matters: jar.lua, syrup.lua and
+-- marmelade.lua build on the strawberry crop, and bread.lua builds on
+-- mcl_farming:bread, so strawberry.lua loads first.
 dofile(modpath .. "/strawberry.lua")
 dofile(modpath .. "/jar.lua")
+dofile(modpath .. "/syrup.lua")
 dofile(modpath .. "/marmelade.lua")
+dofile(modpath .. "/toast.lua")
+dofile(modpath .. "/bread.lua")
+dofile(modpath .. "/jam_toast.lua")
 
 -- Digging a red tulip yields either one strawberry (50%) or the tulip's
 -- normal drop (50%), never both and never nothing. Rarity = 2 on the first
@@ -37,9 +42,19 @@ core.register_chatcommand("leo_mcl_addons_test", {
 		local inv = player:get_inventory()
 		local grant = {
 			"mcl_core:glass 64",
+			"mcl_core:sugar 64",
+			"mcl_honey:honeycomb 64",
+			"mcl_farming:bread 64",
+			"mcl_tools:axe_wood 1",
 			"leo_mcl_addons:jar 64",
 			"leo_mcl_addons:strawberry 64",
 			"leo_mcl_addons:strawberry_seeds 64",
+			"leo_mcl_addons:sugar_syrup 64",
+			"leo_mcl_addons:honey_jar 64",
+			"leo_mcl_addons:marmelade 64",
+			"leo_mcl_addons:bio_marmelade 64",
+			"leo_mcl_addons:toast 64",
+			"leo_mcl_addons:jam_toast 64",
 			"mcl_brewing:stand_000 64",
 			"mcl_mobitems:blaze_powder 64",
 			"mcl_bone_meal:bone_meal 64",
