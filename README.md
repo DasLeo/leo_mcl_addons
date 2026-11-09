@@ -39,6 +39,10 @@ strawberries, strawberry preserves and bread-based foods.
 5. Place bread with a rightclick, chop the loaf with an axe for toast, and
    spread marmelade on it in a crafting grid for jam toast.
 
+## Screenshot
+
+![leo_mcl_addons](screenshot1.png)
+
 ## License
 
 CC-BY-SA 4
