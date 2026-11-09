@@ -1,6 +1,6 @@
 # leo_mcl_addons
 
-A [Mineclonia](https://github.com/Sfiet_Ingvar/mineclonia) addon that adds
+A [Mineclonia](https://codeberg.org/mineclonia/mineclonia) addon that adds
 strawberries, strawberry preserves and bread-based foods.
 
 ## Content
