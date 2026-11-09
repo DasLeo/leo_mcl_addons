@@ -1,9 +1,9 @@
 local S = core.get_translator(core.get_current_modname())
 
--- Sugar syrup / honey jars: the intermediates of the two-step marmelade
+-- Sugar syrup / honey jars: the intermediates of the two-step jam
 -- brew. A jar with sugar or a honeycomb in the brewing stand's middle slot
 -- becomes a sugar syrup jar or a honey jar, which is then combined with a
--- strawberry for the marmelade (see marmelade.lua). The intermediate jars
+-- strawberry for the jam (see jam.lua). The intermediate jars
 -- are brewing ingredients, not food, hence the craftitem and empty_bottle
 -- groups and no eatable group. empty_bottle is what lets them go back into a
 -- bottle slot for the second step.

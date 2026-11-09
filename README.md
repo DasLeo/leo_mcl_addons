@@ -17,16 +17,16 @@ strawberries, strawberry preserves and bread-based foods.
   brewing container (it carries the `empty_bottle` group).
 - **Sugar Syrup Jar / Honey Jar** — intermediate brews: a jar plus sugar (or a
   honeycomb) in a brewing stand. Not food.
-- **Strawberry Marmalade** — brewed from a sugar syrup jar and a strawberry in
+- **Strawberry Jam** — brewed from a sugar syrup jar and a strawberry in
   a brewing stand. Twice as filling as a raw strawberry; eating it returns the
   empty jar.
-- **Bio Marmelade** — the gentler preserve, brewed from a honey jar and a
-  strawberry. Same values as the regular marmelade.
+- **Bio Jam** — the gentler preserve, brewed from a honey jar and a
+  strawberry. Same values as the regular jam.
 - **Placed Bread** — rightclick a solid surface while holding bread to place a
   loaf on it instead of eating the bread. Breaking the loaf with an axe of any
   material drops three toast slices.
 - **Toast** — a slice of bread. Two hunger icons, generous saturation.
-- **Jam Toast** — crafted shapeless from one toast and one marmelade. The
+- **Jam Toast** — crafted shapeless from one toast and one jam. The
   strongest food in the addon: eight hunger points.
 
 ## Usage
@@ -35,9 +35,9 @@ strawberries, strawberry preserves and bread-based foods.
 2. Hoe some dirt into farmland, water it, and plant the seeds.
 3. Harvest mature plants for strawberries.
 4. Brew a jar with sugar (or a honeycomb) into a sugar syrup jar (or honey
-   jar), then brew that with a strawberry into marmelade (or bio marmelade).
+   jar), then brew that with a strawberry into jam (or bio jam).
 5. Place bread with a rightclick, chop the loaf with an axe for toast, and
-   spread marmelade on it in a crafting grid for jam toast.
+   spread jam on it in a crafting grid for jam toast.
 
 ## Screenshot
 
@@ -45,8 +45,12 @@ strawberries, strawberry preserves and bread-based foods.
 
 ## License
 
-CC-BY-SA 4
+Copyright (C) 2026 Philipp Leonhardt
+
+The mod **code** is licensed under the GNU General Public License version 3
+(or, at your option, any later version). See [LICENSE.txt](LICENSE.txt) for the
+full text.
 
 ## Media
 
-CC-BY-SA 4
+**Textures and models** are licensed under CC-BY-SA 4.0.

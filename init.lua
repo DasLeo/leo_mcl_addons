@@ -3,12 +3,12 @@ local modpath = core.get_modpath(core.get_current_modname())
 
 -- Load each feature on its own, mirroring how Mineclonia splits a mod into
 -- per-crop / per-system files. Order matters: jar.lua, syrup.lua and
--- marmelade.lua build on the strawberry crop, and bread.lua builds on
+-- jam.lua build on the strawberry crop, and bread.lua builds on
 -- mcl_farming:bread, so strawberry.lua loads first.
 dofile(modpath .. "/strawberry.lua")
 dofile(modpath .. "/jar.lua")
 dofile(modpath .. "/syrup.lua")
-dofile(modpath .. "/marmelade.lua")
+dofile(modpath .. "/jam.lua")
 dofile(modpath .. "/toast.lua")
 dofile(modpath .. "/bread.lua")
 dofile(modpath .. "/jam_toast.lua")
@@ -25,6 +25,17 @@ core.override_item("mcl_flowers:tulip_red", {
 			{ items = { "mcl_flowers:tulip_red" } },
 		},
 	},
+})
+
+-- leo_mcl_addons_test: the privilege that gates the dev/test chat command below.
+-- Registering it here makes it "known" to the server; without this, /grant and
+-- /grantme reject the name as an "Unknown privilege". It is not handed out
+-- automatically (give_to_admin/give_to_singleplayer = false), so even admins must
+-- grant it explicitly with /grantme leo_mcl_addons_test.
+core.register_privilege("leo_mcl_addons_test", {
+	description = S("Allows use of the /leo_mcl_addons_test dev command"),
+	give_to_singleplayer = false,
+	give_to_admin = false,
 })
 
 -- leo_mcl_addons_test: a dev/test chat command that grants the executing player
@@ -48,13 +59,14 @@ core.register_chatcommand("leo_mcl_addons_test", {
 			"mcl_honey:honeycomb 64",
 			"mcl_farming:bread 64",
 			"mcl_tools:axe_wood 1",
+			"mcl_farming:hoe_wood 1",
 			"leo_mcl_addons:jar 64",
 			"leo_mcl_addons:strawberry 64",
 			"leo_mcl_addons:strawberry_seeds 64",
 			"leo_mcl_addons:sugar_syrup 64",
 			"leo_mcl_addons:honey_jar 64",
-			"leo_mcl_addons:marmelade 64",
-			"leo_mcl_addons:bio_marmelade 64",
+			"leo_mcl_addons:jam 64",
+			"leo_mcl_addons:bio_jam 64",
 			"leo_mcl_addons:toast 64",
 			"leo_mcl_addons:jam_toast 64",
 			"mcl_brewing:stand_000 64",

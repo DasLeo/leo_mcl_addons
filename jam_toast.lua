@@ -1,7 +1,7 @@
 local S = core.get_translator(core.get_current_modname())
 
--- Jam Toast: a toast slice with marmelade spread on it, crafted shapeless from
--- one toast and one marmelade jar. The strongest food in this addon: eatable
+-- Jam Toast: a toast slice with jam spread on it, crafted shapeless from
+-- one toast and one jam jar. The strongest food in this addon: eatable
 -- 8, saturation 7.2.
 core.register_craftitem("leo_mcl_addons:jam_toast", {
 	description = S("Jam Toast"),
@@ -13,5 +13,5 @@ core.register_craftitem("leo_mcl_addons:jam_toast", {
 core.register_craft({
 	type = "shapeless",
 	output = "leo_mcl_addons:jam_toast",
-	recipe = { "leo_mcl_addons:toast", "leo_mcl_addons:marmelade" },
+	recipe = { "leo_mcl_addons:toast", "leo_mcl_addons:jam" },
 })

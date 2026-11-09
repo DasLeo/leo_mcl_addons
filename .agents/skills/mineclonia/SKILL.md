@@ -124,7 +124,7 @@ Key fields:
   number.
 - `_mcl_saturation` — extra saturation points restored (read by `mcl_hunger`).
 - `_mcl_eat_replace_with = "modname:item"` — item left behind after eating
-  (e.g. honey bottle → glass bottle, stew → bowl, jar of marmalade → jar).
+  (e.g. honey bottle → glass bottle, stew → bowl, jar of jam → jar).
 - Eating is handled by `mcl_hunger`'s hold-to-eat system; you normally do **not**
   write `on_use`/`on_eat` for food.
 
@@ -223,11 +223,11 @@ core.register_craftitem("leo_mcl_addons:strawberry_seeds", {
 
 The `mcl_potions` API (see `ITEMS/mcl_potions/API.md`). To brew an item in the
 brewing stand, register the **base container** as an ingredient-potion and map
-ingredients to outputs. This is how a strawberry + 3 jars becomes marmalade:
+ingredients to outputs. This is how a strawberry + 3 jars becomes jam:
 
 ```lua
 mcl_potions.register_ingredient_potion("leo_mcl_addons:jar", {
-	["leo_mcl_addons:strawberry"] = "leo_mcl_addons:marmelade",
+	["leo_mcl_addons:strawberry"] = "leo_mcl_addons:jam",
 })
 ```
 
