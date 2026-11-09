@@ -11,7 +11,7 @@ os.chdir(BASE)
 HANDMADE = {
 	"toast":         "leo_mcl_addons_toast.png",
 	"jam_toast":     "leo_mcl_addons_jam_toast.png",
-	"bio_marmelade": "leo_mcl_addons_bio_marmelade.png",
+	"bio_jam": "leo_mcl_addons_bio_jam.png",
 }
 
 # Derived textures this script (re)generates. Keep hand-authored ones OUT of here.
@@ -23,7 +23,7 @@ OUT = {
 	"bread_bottom": "leo_mcl_addons_bread_bottom.png",
 }
 
-# Filling pixel colours of leo_mcl_addons_marmelade.png, remapped per variant.
+# Filling pixel colours of leo_mcl_addons_jam.png, remapped per variant.
 # Sugar syrup = pale, honey jar = the mcl_honey amber palette. Only the jam
 # "content" colours are swapped; the glass highlights and label band stay put.
 JAR_VARIANTS = {
@@ -65,9 +65,9 @@ def save(im, name):
 	print("  wrote " + path)
 
 
-# --- jar variants: palette-swapped copies of the marmelade jar ---------------
+# --- jar variants: palette-swapped copies of the jam jar ---------------
 for name, mapping in JAR_VARIANTS.items():
-	im = Image.open("leo_mcl_addons_marmelade.png").convert("RGBA")
+	im = Image.open("leo_mcl_addons_jam.png").convert("RGBA")
 	remap(im, mapping)
 	save(im, name)
 
@@ -102,4 +102,4 @@ for y in range(16):
 		put(bread_bottom, x, y, BREAD["crust"] if (x * 3 + y * 5) % 11 == 0 else BREAD["crust_dark"])
 save(bread_bottom, "bread_bottom")
 
-print("done (hand-authored toast/jam_toast/bio_marmelade left untouched)")
+print("done (hand-authored toast/jam_toast/bio_jam left untouched)")
